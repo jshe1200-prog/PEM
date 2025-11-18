@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Vocacional de Orientación - TecnoFuturo</title>
+    <title>Test Vocacional - Universidades IA</title>
     <style>
         /* Paleta de Colores Oscuros y Tema Tecnológico */
         :root {
-            --color-bg-dark: #121212; /* Fondo principal muy oscuro */
-            --color-bg-card: #1e1e1e; /* Fondo de las tarjetas/preguntas */
+            --color-bg-dark: #0a0a0a; /* Fondo principal muy oscuro */
+            --color-bg-card: #1c1c1c; /* Fondo de las tarjetas/preguntas */
             --color-text-light: #e0e0e0; /* Texto claro */
             --color-accent-blue: #00bcd4; /* Azul cian brillante para acentos */
             --color-accent-purple: #9c27b0; /* Púrpura para un toque de originalidad */
             --color-border: #333333; /* Bordes sutiles */
             --color-restart: #ffc107; /* Amarillo para el botón de reinicio */
+            /* --color-uniat: #28a745; -- Eliminado: Verde para destacar resultados UNIAT */
         }
 
         body {
@@ -56,7 +57,7 @@
             border-radius: 10px;
             background-color: #2a2a2a;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            display: none; /* Se oculta por defecto */
+            display: none; 
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -144,7 +145,11 @@
             border-radius: 10px;
             text-align: left;
             border: 1px solid var(--color-accent-blue);
+            transition: border 0.3s;
         }
+        
+        /* .result-item.uniat-priority - CLASE ELIMINADA */
+        /* .result-item.uniat-priority h4 - CLASE ELIMINADA */
 
         .result-item h4 {
             color: var(--color-accent-blue);
@@ -152,7 +157,7 @@
             border-bottom: 1px solid var(--color-border);
             padding-bottom: 5px;
         }
-
+        
         .progress-bar-container {
             height: 10px;
             background-color: var(--color-border);
@@ -182,8 +187,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>🌌 Test Vocacional TecnoFuturo 🚀</h1>
-        <p style="text-align: center;">Responde a las siguientes preguntas según tus intereses y pasiones para encontrar tu camino.</p>
+        <h1>🌌 Test Vocacional - Universidades IA 🤖</h1>
+        <p style="text-align: center;">Responde a las siguientes preguntas según tus intereses en Tecnología, IA y Diseño para encontrar tu camino.</p>
 
         <div class="progress-bar-container">
             <div class="progress-bar" id="progressBar"></div>
@@ -192,155 +197,163 @@
         <div id="test-form">
             
             <div class="question-card active" data-question="1">
-                <h3>1. ¿Qué te atrae más sobre la tecnología?</h3>
-                <label class="option"><input type="radio" name="q1" value="A"> A. Crear historias visuales y mundos inmersivos.</label>
-                <label class="option"><input type="radio" name="q1" value="B"> B. Diseñar estructuras complejas y optimizar procesos.</label>
-                <label class="option"><input type="radio" name="q1" value="C"> C. Construir aplicaciones, proteger datos o desarrollar software.</label>
+                <h3>1. Si pudieras trabajar en un proyecto, ¿qué rol elegirías?</h3>
+                <label class="option"><input type="radio" name="q1" value="C"> A. Desarrollar el código y los modelos que toman decisiones automáticas.</label>
+                <label class="option"><input type="radio" name="q1" value="A"> B. Crear la interfaz, los gráficos 3D o la experiencia visual del usuario.</label>
+                <label class="option"><input type="radio" name="q1" value="B"> C. Definir la estrategia de mercado y asegurar la rentabilidad del proyecto.</label>
             </div>
 
             <div class="question-card" data-question="2">
-                <h3>2. Cuando resuelves un problema, ¿cuál es tu enfoque principal?</h3>
-                <label class="option"><input type="radio" name="q2" value="B"> A. Buscar la solución más eficiente y con el menor desperdicio de recursos.</label>
-                <label class="option"><input type="radio" name="q2" value="C"> B. Analizar los datos y buscar patrones lógicos para predecir el resultado.</label>
-                <label class="option"><input type="radio" name="q2" value="A"> C. Pensar "fuera de la caja" para una solución original y estética.</label>
+                <h3>2. ¿Qué te atrae más?</h3>
+                <label class="option"><input type="radio" name="q2" value="C"> A. Entender patrones estadísticos y predecir tendencias futuras con algoritmos.</label>
+                <label class="option"><input type="radio" name="q2" value="A"> B. Modelar escenarios 3D, edificios o personajes con software de animación.</label>
+                <label class="option"><input type="radio" name="q2" value="B"> C. Optimizar procesos internos de una empresa para hacerla más eficiente.</label>
             </div>
 
             <div class="question-card" data-question="3">
-                <h3>3. ¿Qué actividad disfrutas más en tu tiempo libre?</h3>
-                <label class="option"><input type="radio" name="q3" value="A"> A. Dibujar, editar videos, modelar 3D o hacer fotografía/cine.</label>
-                <label class="option"><input type="radio" name="q3" value="C"> B. Jugar videojuegos, programar proyectos personales o investigar sobre seguridad informática.</label>
-                <label class="option"><input type="radio" name="q3" value="B"> C. Desarmar aparatos, construir maquetas o planificar un evento/viaje detallado.</label>
+                <h3>3. ¿Cómo prefieres resolver un problema de seguridad informática?</h3>
+                <label class="option"><input type="radio" name="q3" value="C"> A. Escribiendo código para auditar sistemas, identificar vulnerabilidades y construir firewalls.</label>
+                <label class="option"><input type="radio" name="q3" value="B"> B. Diseñando políticas corporativas y capacitando equipos para reducir el riesgo humano.</label>
+                <label class="option"><input type="radio" name="q3" value="A"> C. Creando tutoriales visuales o infografías para explicar el peligro de forma sencilla.</label>
             </div>
             
             <div class="question-card" data-question="4">
-                <h3>4. Si pudieras dominar un área del conocimiento, sería:</h3>
-                <label class="option"><input type="radio" name="q4" value="C"> A. El funcionamiento interno de las redes, el hardware y los algoritmos.</label>
-                <label class="option"><input type="radio" name="q4" value="B"> B. La gestión de grandes proyectos, los costos y la optimización de procesos a gran escala.</label>
-                <label class="option"><input type="radio" name="q4" value="A"> C. La teoría del color, la composición visual y la narrativa digital.</label>
+                <h3>4. ¿Con qué tipo de software pasarías horas aprendiendo?</h3>
+                <label class="option"><input type="radio" name="q4" value="A"> A. Blender, Maya, After Effects o Adobe Creative Suite.</label>
+                <label class="option"><input type="radio" name="q4" value="C"> B. Python, SQL, TensorFlow o herramientas de Big Data.</label>
+                <label class="option"><input type="radio" name="q4" value="B"> C. SAP, Power BI, herramientas de Marketing Automation o CRM.</label>
             </div>
 
             <div class="question-card" data-question="5">
-                <h3>5. ¿Qué te parece más interesante en la industria del videojuego?</h3>
-                <label class="option"><input type="radio" name="q5" value="C"> A. Escribir el código y la lógica que hace funcionar la jugabilidad (Gameplay).</label>
-                <label class="option"><input type="radio" name="q5" value="A"> B. Crear los personajes, escenarios y la dirección de arte visual.</label>
-                <label class="option"><input type="radio" name="q5" value="B"> C. Gestionar los equipos de desarrollo y el lanzamiento comercial.</label>
+                <h3>5. Sobre la Inteligencia Artificial (IA), lo que más te interesa es...</h3>
+                <label class="option"><input type="radio" name="q5" value="C"> A. La arquitectura neuronal y el entrenamiento profundo de los modelos (el "cómo").</label>
+                <label class="option"><input type="radio" name="q5" value="B"> B. Aplicar la IA para mejorar la toma de decisiones en finanzas o mercadotecnia (el "para qué").</label>
+                <label class="option"><input type="radio" name="q5" value="A"> C. Usar la IA para generar nuevos contenidos, diseños y animaciones.</label>
             </div>
             
             <div class="question-card" data-question="6">
-                <h3>6. ¿Cómo reaccionas ante una amenaza de seguridad informática (virus, hackeo)?</h3>
-                <label class="option"><input type="radio" name="q6" value="C"> A. Te fascina entender cómo funciona el ataque y cómo podrías prevenirlo/neutralizarlo.</label>
-                <label class="option"><input type="radio" name="q6" value="A"> B. Te enfocas en crear una interfaz visual de alerta clara y calmada para los usuarios.</label>
-                <label class="option"><input type="radio" name="q6" value="B"> C. Te aseguras de que se sigan los protocolos de seguridad y se mitigue el riesgo económico/operacional.</label>
+                <h3>6. ¿Qué te resulta más fascinante?</h3>
+                <label class="option"><input type="radio" name="q6" value="B"> A. Estudiar los principios de la economía y la psicología organizacional.</label>
+                <label class="option"><input type="radio" name="q6" value="C"> B. Explorar los fundamentos teóricos de la matemática y la lógica computacional.</label>
+                <label class="option"><input type="radio" name="q6" value="A"> C. Analizar la historia del arte y las técnicas narrativas visuales.</label>
             </div>
 
             <div class="question-card" data-question="7">
-                <h3>7. ¿Cuál de estas áreas de estudio te resulta más atractiva?</h3>
-                <label class="option"><input type="radio" name="q7" value="B"> A. Termodinámica, Estática o Cálculo Integral.</label>
-                <label class="option"><input type="radio" name="q7" value="A"> B. Historia del Arte, Teoría Cinematográfica o Composición Digital.</label>
-                <label class="option"><input type="radio" name="q7" value="C"> C. Estructuras de Datos, Álgebra Lineal o Sistemas Operativos.</label>
+                <h3>7. La palabra "Arquitectura" te hace pensar en...</h3>
+                <label class="option"><input type="radio" name="q7" value="A"> A. Diseño de espacios habitables, visualización 3D y planos de construcción.</label>
+                <label class="option"><input type="radio" name="q7" value="C"> B. La estructura lógica de una red, base de datos o sistema operativo.</label>
+                <label class="option"><input type="radio" name="q7" value="B"> C. El marco de trabajo para alcanzar objetivos empresariales a largo plazo.</label>
             </div>
 
             <div class="question-card" data-question="8">
-                <h3>8. Si tuvieras que diseñar un espacio físico o digital, priorizarías:</h3>
-                <label class="option"><input type="radio" name="q8" value="A"> A. Que sea visualmente impactante, ergonómico y cumpla con una estética definida.</label>
-                <label class="option"><input type="radio" name="q8" value="B"> B. Que su construcción sea viable, segura y su mantenimiento sea económico.</label>
-                <label class="option"><input type="radio" name="q8" value="C"> C. Que su flujo de datos e información sea lógico, rápido y automatizado.</label>
+                <h3>8. ¿Qué prefieres hacer con una aplicación que creaste?</h3>
+                <label class="option"><input type="radio" name="q8" value="C"> A. Depurar el código hasta que sea impecable y escalable.</label>
+                <label class="option"><input type="radio" name="q8" value="B"> B. Crear una campaña de marketing digital para que millones la usen.</label>
+                <label class="option"><input type="radio" name="q8" value="A"> C. Diseñar la experiencia de usuario y mejorar los gráficos visuales.</label>
             </div>
             
             <div class="question-card" data-question="9">
-                <h3>9. ¿Qué tipo de contenido prefieres crear o consumir?</h3>
-                <label class="option"><input type="radio" name="q9" value="C"> A. Tutoriales de programación o análisis profundo de tecnologías emergentes.</label>
-                <label class="option"><input type="radio" name="q9" value="A"> B. Cortometrajes, animaciones o diseño de logotipos/marcas.</label>
-                <label class="option"><input type="radio" name="q9" value="B"> C. Documentales sobre grandes construcciones o estrategias de negocio y finanzas.</label>
+                <h3>9. ¿Cómo te sientes respecto a las matemáticas avanzadas (cálculo, álgebra lineal)?</h3>
+                <label class="option"><input type="radio" name="q9" value="C"> A. Las encuentro esenciales y me motiva usarlas para resolver problemas complejos.</label>
+                <label class="option"><input type="radio" name="q9" value="B"> B. Son herramientas necesarias, pero mi enfoque está en la gestión y aplicación práctica.</label>
+                <label class="option"><input type="radio" name="q9" value="A"> C. Las prefiero en la teoría, me inclino más por la geometría y la composición.</label>
             </div>
 
             <div class="question-card" data-question="10">
-                <h3>10. El futuro ideal para ti implica...</h3>
-                <label class="option"><input type="radio" name="q10" value="B"> A. Dirigir un gran equipo, optimizar un sistema o gestionar infraestructura crítica.</label>
-                <label class="option"><input type="radio" name="q10" value="C"> B. Desarrollar la próxima generación de IA, proteger el mundo digital o crear software innovador.</label>
-                <label class="option"><input type="radio" name="q10" value="A"> C. Ser un artista digital reconocido, un director de cine o un diseñador de experiencias.</label>
+                <h3>10. El futuro de la tecnología debe enfocarse en...</h3>
+                <label class="option"><input type="radio" name="q10" value="B"> A. La ética, la transformación educativa y el desarrollo del capital humano.</label>
+                <label class="option"><input type="radio" name="q10" value="C"> B. El desarrollo de sistemas inteligentes y la infraestructura de ciberseguridad.</label>
+                <label class="option"><input type="radio" name="q10" value="A"> C. La creación de experiencias inmersivas y contenido digital avanzado (AR/VR).</label>
             </div>
 
             <button id="next-button" onclick="nextQuestion()" disabled>Siguiente Pregunta (1/10)</button>
         </div>
 
         <div id="result-section">
-            <h2>🏆 Tu Orientación Vocacional 🏆</h2>
+            <h2>🏆 Tu Orientación Vocacional - IA y Tecnología 🏆</h2>
             <p>Basado en tus respuestas, estas son las áreas que mejor se alinean con tus intereses:</p>
 
-            <div class="result-item">
-                <h4>✨ Opción de Licenciatura (Enfoque Creativo/Conceptual)</h4>
+            <div class="result-item" id="licenciatura-card">
+                <h4>✨ Opción de Licenciatura (Enfoque Conceptual/Aplicado)</h4>
                 <p id="licenciatura-result"></p>
             </div>
 
-            <div class="result-item">
+            <div class="result-item" id="ingenieria-card">
                 <h4>⚙️ Opción de Ingeniería (Enfoque Lógico/Técnico)</h4>
                 <p id="ingenieria-result"></p>
             </div>
 
-            <div class="result-item">
+            <div class="result-item" id="especializacion-card">
                 <h4>🔬 Opción de Especialización (Enfoque de Profundización)</h4>
                 <p id="especializacion-result"></p>
             </div>
 
             <button id="restart-button" onclick="resetTest()">🔄 Iniciar Test de Nuevo</button>
 
-            <p style="font-style: italic; margin-top: 30px; border-top: 1px dashed var(--color-border); padding-top: 15px;">**NOTA:** Los resultados son orientativos y se basan en la correlación de tus intereses con las áreas de estudio. ¡Investiga a fondo la carrera que más te emocione!</p>
+            <p style="font-style: italic; margin-top: 30px; border-top: 1px dashed var(--color-border); padding-top: 15px;">**NOTA:** Dos de tus tres resultados están alineados con la oferta de UNIAT para maximizar tus opciones.</p>
         </div>
     </div>
 
     <script>
-        // Mapeo de Carreras y Especialidades por Interés
+        // Mapeo de Carreras y Especialidades por Interés (A=Arte/Diseño, B=Negocios/Gestión, C=Cálculo/IA/Sistemas)
         const careers = {
-            'A': { // Enfoque Creativo/Visual/Diseño (Licenciaturas principales)
+            'A': { // Enfoque Creativo/Visual/Diseño
                 licenciaturas: [
-                    "Licenciatura en cine y animación digital (UNIAT)", 
-                    "Licenciatura en diseño y arte para videojuegos (UNIAT)",
-                    "Licenciatura en diseño, animación y arte digital (UNITEC)",
-                    "Licenciatura en arte digital (Tecnológico de Monterrey)",
-                    "Licenciatura en diseño (Tecnológico de Monterrey)",
-                    "Licenciatura en arquitectura (UNITEC)"
+                    "Licenciatura en Diseño y Arte para Videojuegos (UNIAT)", 
+                    "Licenciatura en Arquitectura 3D (UNIAT)",
+                    "Licenciatura en Cine y Animación Digital (UNIAT)",
+                    "Licenciatura en Humanidades Digitales e Inteligencia Artificial (ITESM)",
+                    "Licenciatura en Innovación y Transformación Educativa (ITESM)"
                 ],
                 ingenierias: [
-                    "Ingeniería en programación de videojuegos (UNIAT)",
-                    "Ingeniería en videojuegos (UNITEC)"
+                    "Ingeniería en Programación de Videojuegos (UNIAT)",
+                    "Ingeniería en Desarrollo de Software (UNIAT)",
+                    "Ingeniería en Tecnologías Computacionales (ITESM)"
                 ],
                 especializaciones: [
-                    "Maestría en animación 3D y postproducción digital (UNIAT)",
-                    "Maestría en arquitectura (UNAM)",
-                    "Maestría en artes visuales (UNAM)"
+                    "Maestría en Animación 3D y Postproducción Digital (UNIAT)",
+                    "Maestría en Visualización Arquitectónica (UNIAT)",
+                    "Maestría en Diseño y Desarrollo Integral de Videojuegos (UNIAT)",
+                    "Maestría en Ciencias Computacionales (ITESM)"
                 ]
             },
-            'C': { // Enfoque Lógico/Programación/Sistemas (Ingenierías principales)
+            'B': { // Enfoque Negocios/Gestión/Finanzas/Humanidades
                 licenciaturas: [
+                    "Licenciatura en Negocios de Inteligencia Artificial (UNIAT)",
+                    "Licenciatura en Marketing Digital (UNIAT)",
+                    "Licenciatura en Estrategia y Transformación de Negocios (ITESM)",
+                    "Licenciatura en Inteligencia de Negocios (ITESM)",
+                    "Licenciatura en Contaduría Pública y Finanzas (ITESM)",
+                    "Licenciatura en Desarrollo de Talento y Cultura Organizacional (ITESM)",
+                ],
+                ingenierias: [
+                    "Ingeniería en Negocios de Tecnologías Avanzadas (UNIAT)",
+                    "Ingeniería Industrial y de Sistemas (ITESM)",
+                    "Ingeniería en Transformación Digital de Negocios (ITESM)"
+                ],
+                especializaciones: [
+                    "Maestría Inteligencia Artificial Aplicada (ITESM)", 
+                ]
+            },
+            'C': { // Enfoque Lógico/IA/Sistemas/Ciberseguridad
+                licenciaturas: [
+                    "Licenciatura en Ciencia de Datos (IPN)",
                     "Licenciatura en ciencias de la computación (UNAM)",
-                    "Licenciatura en diseño, animación y arte digital (UNITEC)"
+                    "Licenciatura en informática (UNAM)",
+                    "Licenciatura en Matemáticas (UNAM)"
                 ],
                 ingenierias: [
-                    "Ingeniería en ciberseguridad (UNIAT)",
-                    "Ingeniería en sistemas computacionales (UNITEC)",
-                    "Ingeniería en tecnologías computacionales (Tecnológico de Monterrey)",
-                    "Ingeniería en programación de videojuegos (UNIAT)"
+                    "Ingeniería en Ciberseguridad (UNIAT)",
+                    "Ingeniería en Inteligencia Artificial (IPN)",
+                    "Ingeniería en Inteligencia Artificial y Ciencia de Datos (ITESM)",
+                    "Ingeniería en Robótica y Sistemas Inteligentes (ITESM)",
+                    "Ingeniería en Desarrollo de Software (UNIAT)"
                 ],
                 especializaciones: [
-                    "Maestría en ciberseguridad (UNIAT)",
-                    "Maestría en Ciencias Computacionales (Tecnológico de Monterrey)"
-                ]
-            },
-            'B': { // Enfoque Gestión/Procesos/Estructura (Ingenierías de Gestión/Otras Licenciaturas)
-                licenciaturas: [
-                    "Licenciatura actuaria (UNAM)",
-                    "Licenciatura en arquitectura (UNITEC)"
-                ],
-                ingenierias: [
-                    "Ingeniería Industrial (UNAM)",
-                    "Ingeniería civil (Tecnológico de Monterrey)",
-                    "Ingeniería petrolera (UNAM)"
-                ],
-                especializaciones: [
-                    "Maestría en Nanotecnología (Tecnológico de Monterrey)",
-                    "Maestría en nutrición clínica (UNITEC)", 
-                    "Maestría en fisioterapia (UNITEC)"
+                    "Maestría en Ciberseguridad (UNIAT)",
+                    "Maestría en Ciencia y Tecnología de Inteligencia Artificial y Ciencia de Datos (IPN)",
+                    "Maestría en Ciencias Computacionales (ITESM)",
+                    "Posgrado en Ciencia e Ingeniería de la Computación (UNAM)"
                 ]
             }
         };
@@ -354,7 +367,15 @@
         const testForm = document.getElementById('test-form');
         const resultSection = document.getElementById('result-section');
 
-        // Función para actualizar el botón Siguiente
+        // Referencias a las tarjetas de resultado
+        const resultCards = [
+            { id: 'licenciatura-card', output: 'licenciatura-result', type: 'licenciaturas' },
+            { id: 'ingenieria-card', output: 'ingenieria-result', type: 'ingenierias' },
+            { id: 'especializacion-card', output: 'especializacion-result', type: 'especializaciones' }
+        ];
+
+
+        // --- Funciones de navegación (sin cambios relevantes) ---
         function updateButtonState() {
             const currentCard = document.querySelector(`.question-card[data-question="${currentQuestion}"]`);
             const radioChecked = currentCard.querySelector(`input[name="q${currentQuestion}"]:checked`);
@@ -372,7 +393,6 @@
             }
         }
 
-        // Añadir listeners para habilitar el botón al seleccionar una opción
         questionCards.forEach(card => {
             card.addEventListener('change', (e) => {
                 if (e.target.type === 'radio' && parseInt(card.dataset.question) === currentQuestion) {
@@ -381,7 +401,6 @@
             });
         });
 
-        // Función principal para la navegación
         function nextQuestion() {
             const currentCard = document.querySelector(`.question-card[data-question="${currentQuestion}"]`);
             const selectedOption = currentCard.querySelector(`input[name="q${currentQuestion}"]:checked`);
@@ -391,11 +410,9 @@
                 return;
             }
 
-            // Registrar la respuesta y sumar puntos
             const answerValue = selectedOption.value;
             results[answerValue]++;
             
-            // Animación y transición a la siguiente pregunta
             currentCard.classList.remove('active');
 
             if (currentQuestion < totalQuestions) {
@@ -410,106 +427,132 @@
                     }, 500); 
                 }
             } else {
-                // Final del test
                 showResults();
             }
         }
 
-        // Función para la barra de progreso
         function updateProgressBar() {
             const progress = (currentQuestion / totalQuestions) * 100;
             progressBar.style.width = `${progress}%`;
         }
+        // --- Fin Funciones de navegación ---
+
 
         /**
-         * Función para obtener una carrera, priorizando UNIAT. (Incluye Lic, Ing y Esp)
+         * Obtiene una carrera según la prioridad.
          * @param {string} profileKey - La clave del perfil dominante ('A', 'B', 'C').
          * @param {string} type - El tipo de carrera ('licenciaturas', 'ingenierias', 'especializaciones').
+         * @param {boolean} forceUniat - Si es TRUE, garantiza que la carrera sea de UNIAT.
          * @returns {string} La carrera seleccionada.
          */
-        function getPrioritizedCareer(profileKey, type) {
+        function getPrioritizedCareer(profileKey, type, forceUniat = false) {
             const allCareers = careers[profileKey][type];
-            // 1. Filtra las que son de UNIAT
             const uniatCareers = allCareers.filter(c => c.includes('(UNIAT)'));
-            // 2. Filtra el resto
             const nonUniatCareers = allCareers.filter(c => !c.includes('(UNIAT)'));
 
-            // Prioridad 1: Elegir aleatoriamente entre las carreras de UNIAT si existen
-            if (uniatCareers.length > 0) {
+            if (forceUniat && uniatCareers.length > 0) {
+                // Forzar UNIAT: elegir aleatoriamente entre las de UNIAT
                 return uniatCareers[Math.floor(Math.random() * uniatCareers.length)];
             }
             
-            // Prioridad 2: Si no hay de UNIAT para ese perfil, elegir aleatoriamente de las otras
+            if (forceUniat && uniatCareers.length === 0) {
+                 // Si se fuerza UNIAT pero no hay opciones de UNIAT para ese perfil/tipo, tomar de otro lado como fallback
+                 // Esto asegura que siempre haya un resultado, aunque no sea UNIAT si no hay opción.
+                 return nonUniatCareers.length > 0 ? nonUniatCareers[Math.floor(Math.random() * nonUniatCareers.length)] : "No hay opciones disponibles en esta categoría.";
+            }
+
+            // No forzar UNIAT:
+            // Intentar elegir una NO UNIAT primero si existen
             if (nonUniatCareers.length > 0) {
                 return nonUniatCareers[Math.floor(Math.random() * nonUniatCareers.length)];
+            }
+            
+            // Si no hay NO-UNIAT, entonces como último recurso, tomar una UNIAT (para garantizar resultado)
+            if (uniatCareers.length > 0) {
+                 return uniatCareers[Math.floor(Math.random() * uniatCareers.length)];
             }
 
             return "No se encontró una carrera disponible en esta categoría.";
         }
 
 
-        // Función para mostrar resultados
+        // Función para determinar y mostrar resultados
         function showResults() {
             testForm.style.display = 'none';
             nextButton.style.display = 'none';
             resultSection.style.display = 'block';
 
-            // Determinar los perfiles más altos
+            // --- 1. Determinar el perfil más fuerte ---
             const sortedResults = Object.entries(results).sort((a, b) => b[1] - a[1]);
             const dominantProfile = sortedResults[0][0]; 
 
-            // 1. Licenciatura (Prioridad al perfil dominante A, o al más alto entre A y B)
-            let licKey = (dominantProfile === 'A' || results['A'] >= results['C']) ? 'A' : 'B';
-            const licenciatura = getPrioritizedCareer(licKey, 'licenciaturas');
-
-            // 2. Ingeniería (Prioridad al perfil dominante C, o al más alto entre C y B)
-            let ingKey = (dominantProfile === 'C' || results['C'] >= results['B']) ? 'C' : 'B';
-            if (dominantProfile === 'A' && results['C'] > 0) ingKey = 'C'; 
-            else if (dominantProfile === 'A' && results['B'] > 0) ingKey = 'B'; 
-            const ingenieria = getPrioritizedCareer(ingKey, 'ingenierias');
-
-            // 3. Especialización (Prioridad al perfil dominante)
-            const especializacion = getPrioritizedCareer(dominantProfile, 'especializaciones');
+            // --- 2. Determinar las claves de perfil para cada tipo de carrera ---
+            let licKey = (results['B'] > results['A'] && results['B'] > results['C']) ? 'B' : (results['A'] >= results['C'] ? 'A' : 'C');
+            let ingKey = (results['C'] > results['B'] && results['C'] > results['A']) ? 'C' : (results['B'] >= results['A'] ? 'B' : 'A');
+            let espKey = dominantProfile;
 
 
-            // Mostrar en el DOM
-            document.getElementById('licenciatura-result').textContent = `${licenciatura} (Recomendación basada en tu enfoque Creativo/Conceptual: ${licKey})`;
-            document.getElementById('ingenieria-result').textContent = `${ingenieria} (Recomendación basada en tu enfoque Lógico/Técnico: ${ingKey})`;
-            document.getElementById('especializacion-result').textContent = `${especializacion} (Especialización alineada a tu perfil dominante: ${dominantProfile})`;
+            // --- 3. Determinar qué 2 de 3 resultados serán UNIAT (elección aleatoria) ---
+            const categories = ['licenciatura', 'ingenieria', 'especializacion'];
             
-            // Animación final del resultado
+            // Generar dos índices únicos para UNIAT
+            let uniatIndices = [];
+            while(uniatIndices.length < 2){
+                const r = Math.floor(Math.random() * 3);
+                if(uniatIndices.indexOf(r) === -1) uniatIndices.push(r);
+            }
+            
+            // Mapeo de índices a categorías: 0=Lic, 1=Ing, 2=Esp
+            const isUniat = [false, false, false];
+            isUniat[uniatIndices[0]] = true;
+            isUniat[uniatIndices[1]] = true;
+
+            // --- 4. Asignación de Carreras ---
+            
+            const resultsData = [
+                { key: licKey, type: 'licenciaturas', isUniat: isUniat[0] },
+                { key: ingKey, type: 'ingenierias', isUniat: isUniat[1] },
+                { key: espKey, type: 'especializaciones', isUniat: isUniat[2] }
+            ];
+
+            // Generar y mostrar resultados
+            resultCards.forEach((cardInfo, index) => {
+                const data = resultsData[index];
+                const career = getPrioritizedCareer(data.key, data.type, data.isUniat);
+                
+                document.getElementById(cardInfo.output).textContent = `${career} (Enfoque: ${data.key})`;
+                
+                // NOTA: Se ha eliminado la lógica para añadir la clase 'uniat-priority'
+                // Esto asegura que no haya un estilo visual específico para las carreras de UNIAT.
+            });
+
             document.querySelector('.container').style.boxShadow = '0 10px 50px rgba(156, 39, 176, 0.5), 0 0 80px rgba(0, 188, 212, 0.3)';
         }
 
         // Función para reiniciar el test
         function resetTest() {
-            // 1. Reiniciar variables de estado
             currentQuestion = 1;
             results = { 'A': 0, 'B': 0, 'C': 0 };
 
-            // 2. Ocultar resultados y mostrar formulario
             resultSection.style.display = 'none';
             testForm.style.display = 'block';
             nextButton.style.display = 'block';
             
-            // 3. Resetear el estado de las preguntas y la selección de radio
             questionCards.forEach((card, index) => {
-                // Ocultar todas
                 card.classList.remove('active');
-                // Desmarcar radios
                 card.querySelectorAll('input[type="radio"]').forEach(radio => {
                     radio.checked = false;
                 });
             });
 
-            // 4. Mostrar solo la primera pregunta
+            // NOTA: Se ha eliminado la lógica para remover la clase 'uniat-priority'
+            // ya que la clase misma ha sido eliminada.
+
             document.querySelector(`.question-card[data-question="1"]`).classList.add('active'); 
 
-            // 5. Actualizar la barra de progreso y el botón
             updateProgressBar();
             updateButtonState();
             
-            // 6. Quitar la sombra final
             document.querySelector('.container').style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 188, 212, 0.1)';
         }
         
